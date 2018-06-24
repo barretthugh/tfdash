@@ -8,7 +8,8 @@ COPY requirement.txt /requirement.txt
 # COPY jupyter_notebook_config.py /root/.jupyter/
 USER root
 
-RUN apt-get install -y wget \
+RUN apt-get update \
+  && apt-get install -y wget \
   && cd / \
   && wget https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz \
 	&& tar xvf ta-lib-0.4.0-src.tar.gz \
