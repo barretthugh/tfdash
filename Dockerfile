@@ -8,7 +8,8 @@ COPY requirement.txt /requirement.txt
 # COPY jupyter_notebook_config.py /root/.jupyter/
 
 
-RUN wget https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz \
+RUN apt-get install -y wget \
+  && wget https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz \
 	&& tar xvf ta-lib-0.4.0-src.tar.gz \
 	&& cd ta-lib \
 	&& ./configure --prefix=/usr \
@@ -30,7 +31,7 @@ RUN wget https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.
 	&& chmod +x /usr/local/bin/chromedriver \
 	&& pip install Tushare
 
-EXPOSE 8000
+EXPOSE 8888
 #  apt-get update \
 #    && apt-get install -y --no-install-recommends ffmpeg \
 #    && apt-get clean \
