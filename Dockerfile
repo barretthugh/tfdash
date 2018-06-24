@@ -6,9 +6,10 @@ COPY requirement.txt /requirement.txt
 #COPY pip.conf /root/.pip/pip.conf 				for mirror in China
 #COPY source.list /etc/apt/sources.list			for mirror in China
 # COPY jupyter_notebook_config.py /root/.jupyter/
-
+USER root
 
 RUN apt-get install -y wget \
+  && cd / \
   && wget https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz \
 	&& tar xvf ta-lib-0.4.0-src.tar.gz \
 	&& cd ta-lib \
