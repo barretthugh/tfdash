@@ -94,7 +94,6 @@ testpath
 tornado
 tqdm
 traitlets
-tushare
 unidecode
 urllib3
 wcwidth
