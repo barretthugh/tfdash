@@ -33,6 +33,8 @@ RUN apt-get update \
 	&& chmod +x /usr/local/bin/chromedriver \
 	&& pip install Tushare
 
+WORKDIR "/"
+
 EXPOSE 8888
 #  apt-get update \
 #    && apt-get install -y --no-install-recommends ffmpeg \
