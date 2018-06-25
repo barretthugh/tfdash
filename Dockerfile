@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow
+FROM tensorflow/tensorflow:1.8.0-py3
 
 ENV TZ=Asia/Shanghai
 
