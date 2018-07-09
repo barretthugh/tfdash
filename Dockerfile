@@ -31,9 +31,15 @@ RUN apt-get update \
 	&& mv /chromedriver /usr/local/bin/ \
 	&& rm /usr/local/bin/chromedriver.zip \
 	&& chmod +x /usr/local/bin/chromedriver \
-	&& pip install Tushare
+	&& pip install Tushare \
+  && jupyter nbextension enable --py widgetsnbextension \
+  && jupyter serverextension enable --py jupyterlab
 
 WORKDIR "/"
+
+EXPOSE 8888 8000 6006
+
+CMD ["jupyter", "lab", "--allow-root"]
 
 EXPOSE 8888
 #  apt-get update \

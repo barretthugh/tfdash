@@ -109,3 +109,6 @@ patsy
 Pillow
 pycparser
 TA-Lib
+ipywidgets
+jupyterlab
+gensim
