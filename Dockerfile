@@ -21,7 +21,6 @@ RUN apt-get update \
 	&& cd .. \
 	&& rm -rf ta-lib \
 	&& rm ta-lib-0.4.0-src.tar.gz \
-	&& apt-get update \
 	&& curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /chrome.deb \
 	&& dpkg -i /chrome.deb || apt-get install -yf \
 	&& rm /chrome.deb \
